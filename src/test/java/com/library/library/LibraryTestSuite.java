@@ -191,7 +191,7 @@ public class LibraryTestSuite {
 
         //CleanUp
         try {
-            rentRepository.deleteById(rentId);
+            rentRepository.deleteById(rent.getRentId());
         } catch (Exception err) {
             //do nothing
         }
@@ -216,7 +216,6 @@ public class LibraryTestSuite {
         rentRepository.save(rent);
         long rentId = rent.getRentId();
 
-
         //When
             rent.setReturnDate(new Date());
             rent.getCopies()
@@ -229,8 +228,7 @@ public class LibraryTestSuite {
 
         //CleanUp
         try {
-            readerRepository.deleteById(rentId);
-
+            rentRepository.deleteById(rent.getRentId());
         } catch (Exception err) {
             //do nothing
         }
