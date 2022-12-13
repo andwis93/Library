@@ -5,12 +5,10 @@ import com.library.library.domain.Title;
 import com.library.library.domain.Reader;
 import com.library.library.domain.Rent;
 import com.library.library.domain.support.Status;
-import com.library.library.mapper.CopyMapper;
 import com.library.library.repository.CopyRepository;
 import com.library.library.repository.TitleRepository;
 import com.library.library.repository.ReaderRepository;
 import com.library.library.repository.RentRepository;
-import com.library.library.service.CopyDbService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,10 +27,6 @@ public class LibraryTestSuite {
     private CopyRepository copyRepository;
     @Autowired
     private RentRepository rentRepository;
-
-    private CopyMapper copyMapper;
-
-    private CopyDbService copyDbService;
 
     @Test
     void testReaderSave() {

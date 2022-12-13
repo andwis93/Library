@@ -1,6 +1,5 @@
 package com.library.library.controller;
 
-import com.library.library.domain.Title;
 import com.library.library.domain.TitleDto;
 import com.library.library.domain.TitleGetDto;
 import com.library.library.exceptions.EmptyFieldException;
@@ -27,13 +26,7 @@ public class TitleController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Void> addTitle(@RequestBody TitleDto titleDto) throws EmptyFieldException {
-        Title title = titleMapper.mapToTitle(titleDto);
-        if (title.getTitle() != null) {
-            titleDbService.saveTitle(title);
+            titleDbService.saveTitle(titleDto);
             return ResponseEntity.ok().build();
-        } else {
-            throw new EmptyFieldException();
-        }
     }
-
 }
